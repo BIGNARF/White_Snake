@@ -7,7 +7,7 @@ struct User {
     password: String,
 }
 
-fn add_to_db() -> Result<(), Error> {
+pub fn add_to_db() -> Result<(), Error> {
     let user = User {
         username: "my-user".to_string(),
         password: "my-password".to_string(),
@@ -30,7 +30,7 @@ fn add_to_db() -> Result<(), Error> {
     Ok(())
 }
 
-fn read_from_db() -> Result<(), Error> {
+pub fn read_from_db() -> Result<(), Error> {
     // open the existing database file
     let db = DB::open("my-database.db")?;
 
