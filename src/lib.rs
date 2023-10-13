@@ -7,12 +7,6 @@ struct User {
     password: String,
 }
 
-
-fn main() {
-    //add_to_db();
-    read_from_db();
-} 
-
 fn add_to_db() -> Result<(), Error> {
     let user = User {
         username: "my-user".to_string(),
