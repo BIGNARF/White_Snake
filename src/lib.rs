@@ -1,6 +1,19 @@
 use jammdb::{Data, Error, DB};
 use serde::{Deserialize, Serialize};
 
+pub struct WSModule{
+    assets :DB
+} 
+pub impl engine_core::Module for WSModule{
+    fn start(&self){    
+        &self.assets=DB::open(include_bytes!("my-database.db"))?;
+    }
+
+    fn finish(&self){
+
+    }
+}
+
 #[derive(Debug, PartialEq, Deserialize, Serialize)]
 struct User {
     username: String,
@@ -14,7 +27,7 @@ pub fn add_to_db() -> Result<(), Error> {
     };
 
     // open a new database file and start a writable transaction
-    let db = DB::open("my-database.db")?;
+    let db = DB::open(include_bytes!("my-database.db"))?;
     let tx = db.tx(true)?;
 
     // create a bucket to store users
