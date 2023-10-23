@@ -1,18 +1,18 @@
 use jammdb::{Data, Error, DB};
 use serde::{Deserialize, Serialize};
-
+/*
 pub struct WSModule{
     assets :DB
 } 
 pub impl engine_core::Module for WSModule{
     fn start(&self){    
-        &self.assets=DB::open(include_bytes!("my-database.db"))?;
+        &self.assets=DB::open("my-database.db")?;
     }
 
     fn finish(&self){
 
     }
-}
+}*/
 
 #[derive(Debug, PartialEq, Deserialize, Serialize)]
 struct User {
