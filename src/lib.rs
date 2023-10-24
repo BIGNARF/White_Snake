@@ -1,3 +1,5 @@
+use std::path;
+
 use sqlite::{ Statement, Connection};
 
 pub struct blob_holder{
@@ -5,8 +7,10 @@ pub struct blob_holder{
 }
 
 impl blob_holder{
-    pub fn new()->blob_holder{
-        blob_holder { connection: sqlite::open("database.db").unwrap() }
+    pub fn new<T>(path :T)->blob_holder
+    where T:AsRef<std::path::Path>
+    {
+        blob_holder { connection: sqlite::open(path).unwrap() }
     }
 
     pub fn build(&self, Table: &str)->sqlite::Result<()>{
