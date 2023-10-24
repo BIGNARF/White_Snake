@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 engine_core={git="https://github.com/BIGNARF/core.git"}
 jammdb = "0.10.0"
+rand = "0.8.5"
 rmp-serde = "1.1.2"
 serde = {version="1.0.188", features=["derive"]}
 sqlite = "0.31.1"
