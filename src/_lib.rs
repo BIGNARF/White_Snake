@@ -2,15 +2,15 @@ use std::path;
 
 use sqlite::{ Statement, Connection};
 
-pub struct blob_holder{
+pub struct AssetHolder{
     connection: Connection
 }
 
-impl blob_holder{
-    pub fn new<T>(path :T)->blob_holder
+impl AssetHolder{
+    pub fn new<T>(path :T)->AssetHolder
     where T:AsRef<std::path::Path>
     {
-        blob_holder { connection: sqlite::open(path).unwrap() }
+        AssetHolder { connection: sqlite::open(path).unwrap() }
     }
 
     pub fn build(&self, Table: &str)->sqlite::Result<()>{
