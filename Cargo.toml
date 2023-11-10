@@ -6,7 +6,6 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-engine_core={git="https://github.com/BIGNARF/core.git"}
 sqlite = {version="0.31.1", features=["bundled"]}
 rlua = "0.19.7"
 
